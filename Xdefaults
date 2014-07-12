@@ -1,0 +1,130 @@
+! -*-	mode: xrdb;	-*-
+
+! геометрия (позиция, размер) окна (в символах). Стандартный размер: 80x24, увеличено для использования табов
+!URxvt.geometry: 82x26
+
+! используемый шрифт
+URxvt.font: xft:Monaco-10,xft:Monospace
+
+! иконка для иксов
+URxvt*iconFile: /usr/share/pixmaps/urxvt_32x32.xpm
+
+! расстояние между строками
+URxvt.lineSpace: 0
+
+! между символами
+URxvt.letterSpace: -1
+
+!Colors
+
+! цвет фона
+URxvt.background: #000000
+
+! цвет переднего плана
+URxvt.foreground: #f6f3e8
+
+! процент "гашения" цвета текста в неактивном окне
+URxvt.fading: 40
+
+!  уменьшение (-100 .. -1) или увеличение (0 .. 100) яркости прозрачного фона
+URxvt.shading: 30
+
+! Псевдопрозрачность
+URxvt.transparent: True
+
+! Цвет "гашения" текста
+URxvt.fadeColor: #666666
+
+! Цвет окрашивания прозрачного фона
+!URxvt.tintColor: #354040
+
+! стиль скроллбара
+URxvt.scrollstyle: plain
+
+! цвет скроллера
+URxvt.scrollColor: #1A1A1A
+
+! цвет основной части скролл-бара
+URxvt.troughColor: #1A1A1A
+
+URxvt*colorUL:            #8ae234
+! line color for underline
+URxvt*underlineColor:     #92659a
+
+! black dark/light
+URxvt*color0:             #2e3436
+URxvt*color8:             #6e706b
+
+! red dark/light
+URxvt*color1:             #cc0000
+URxvt*color9:             #ef2929
+
+! green dark/light
+URxvt*color2:             #4e9a06
+URxvt*color10:            #8ae234
+
+! yellow dark/light
+URxvt*color3:             #edd400
+URxvt*color11:            #fce94f
+
+! blue dark/light
+URxvt*color4:             #3465a4
+URxvt*color12:            #729fcf
+
+! magenta dark/light
+URxvt*color5:             #92659a
+URxvt*color13:            #c19fbe
+
+! cyan dark/light
+URxvt*color6:             #07c7ca
+URxvt*color14:            #63e9e9
+
+! white dark/light
+URxvt*color7:             #d3d7cf
+URxvt*color15:            #eeeeec
+
+! скроллбар
+URxvt.scrollBar: True
+
+! прокрутка при выводе текста
+URxvt*scrollTtyOutput: True
+
+! прокрутка по нажатию клавиши
+URxvt*scrollTtyKeypress: True
+URxvt*scrollWithBuffer: True
+URxvt*secondaryScroll: True
+
+! расположение скроллбара 
+URxvt.scrollBar_right: True
+URxvt.scrollBar_floating: True
+
+! Мерцание курсора
+URxvt.cursorBlink: False
+
+! включить расширения на perl: основные, парсер регулярных выражений(для подсветки URL)
+URxvt.perl-ext-common: default,matcher
+URxvt.matcher.button: 1
+
+! регексп для ссылок:
+URxvt.matcher.pattern.0:
+(?:https?:\\/\\/|ftp:\\/\\/|news:\\/\\/|mailto:|file:\\/\\/|\\bwww\\.)\n\                           
+[a-zA-Z0-9\\x{0410}-\\x{044F}\\-\\@;\\/?:&=%\\$_.+!*\\x27,~#]*\n\
+                           (\n\
+                             
+\\([a-zA-Z0-9\\x{0410}-\\x{044F}\\-\\@;\\/?:&=%\\$_.+!*\\x27,~#]*\\)| # 
+Allow a pair of matched parentheses\n\
+                             
+[a-zA-Z0-9\\x{0410}-\\x{044F}\\-\\@;\\/?:&=%\\$_+*~]  # exclude some 
+trailing characters (heuristic)\n\
+                           )+
+! подчёркивать ссылки
+URxvt.underlineURLs: true
+
+! браузер для открытия ссылок
+URxvt.urlLauncher: google-chrome-stable
+ 
+! цвета табов (настройка для прозрачных терминалов)
+!URxvt.tabbar-fg: 2
+!URxvt.tabbar-bg: -1
+!URxvt.tab-fg: 7
+!URxvt.tab-bg: -1

@@ -1,0 +1,81 @@
+# Conky settings #
+background no
+update_interval 1
+
+cpu_avg_samples 2
+net_avg_samples 2
+
+override_utf8_locale yes
+
+double_buffer yes
+no_buffers yes
+
+text_buffer_size 2048
+#imlib_cache_size 0
+
+temperature_unit fahrenheit
+
+# Window specifications #
+
+own_window no
+own_window_type normal
+own_window_transparent yes
+own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+
+border_inner_margin 0
+border_outer_margin 0
+
+minimum_size 220 10
+maximum_width 220
+
+alignment br
+gap_x 5
+gap_y -60
+
+# Graphics settings #
+draw_shades no
+draw_outline no
+draw_borders no
+draw_graph_borders no
+
+# Text settings #
+use_xft yes
+xftfont caviar dreams:size=8
+xftalpha 0.5
+
+uppercase no
+
+temperature_unit celsius
+
+default_color FFFFFF
+
+TEXT
+${voffset 8}${color 3399FF}${font caviar dreams:size=14}${time %A}${font}${voffset -8}${alignr 50}${color FFFFFF}${font caviar dreams:size=30}${time %e}${font}
+${color FFFFFF}${voffset -24}${color 3399FF}${font caviar dreams:size=20}${time %b}${font}${voffset -3} ${color FFFFFF}#${font caviar dreams:size=20}${time %Y}${font}${color 3399FF}${hr}
+
+${hr}
+
+${color 3399FF}Uptime:$alignr${color FFFFFF}$uptime_short
+
+${color #3399FF}NAME $alignr PID CPU% MEM%
+${color ffffff}${top name 1} $alignr ${top pid 1} ${top cpu 1} ${top mem 1}
+${top name 2} $alignr ${top pid 2} ${top cpu 2} ${top mem 2}
+${top name 3} $alignr ${top pid 3} ${top cpu 3} ${top mem 3}
+${top name 4} $alignr ${top pid 4} ${top cpu 4} ${top mem 4}
+${top name 5} $alignr ${top pid 5} ${top cpu 5} ${top mem 5}
+
+Disk
+${color 3399FF}/:$color ${fs_free_perc /}%  ${fs_used /}/${fs_size /}
+${color #70b6fd}${fs_bar 6 /}$color
+${color 3399FF}/home:$color ${fs_free_perc /home}%  ${fs_used /home}/${fs_size /home}
+${color #70b6fd}${fs_bar 6 /home}$color
+${color 3399FF}rep/:$color ${fs_free_perc /media/repository/}%  ${fs_used /media/repository/}/${fs_size /media/repository/}
+${color #70b6fd}${fs_bar 6 /media/repository/}$color
+
+Net (Wi-Fi)
+${color 3399FF}Upload:$color $alignr${upspeed  wlp9s0}
+${color 3399FF}Download:$color $alignr${downspeed wlp9s0}
+${color 3399FF}IP: $alignr${color ffffff}${execi 3600 wget -O - -q icanhazip.com}
+
+
+
