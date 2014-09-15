@@ -55,7 +55,7 @@ source $ZSH/oh-my-zsh.sh
 # User configuration
 
 #Export
-export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=$HOME/bin:/usr/local/bin:$HOME/.gem/ruby/2.1.0/bin:$PATH
 export EDITOR="/usr/bin/nano"
 #export TERM="/usr/bin/urxvt"
 
@@ -162,7 +162,7 @@ alias ping='ping -c3'
 alias shutdown='systemctl poweroff'
 alias sleep='systemctl suspend'
 
-alias -s {avi,mkv,mpeg,mpg,mov,m2v,mp4,wmv}=vlc
+alias -s {avi,mkv,mpeg,mpg,mov,m2v,mp4,wmv,m4v}=vlc
 alias -s {odt,doc,sxw,rtf}=openoffice.org
 alias -s {ogg,mp3,wav,wma}=vlc
 autoload -U pick-web-browser
